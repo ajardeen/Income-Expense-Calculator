@@ -1,0 +1,448 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 20;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: poppins;
+}
+li {
+  all: unset;
+}
+#type {
+  width: 100%;
+  max-width: 220px;
+  padding: 5px;
+  height: 35px;
+  border-radius: 12px;
+  border: 1.5px solid lightgrey;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  box-shadow: 0px 0px 20px -18px;
+}
+#type:focus {
+  height: 45px;
+}
+option {
+  padding: 10px;
+}
+#description,
+#amount {
+  width: 100%;
+  max-width: 220px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1.5px solid lightgrey;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  box-shadow: 0px 0px 20px -18px;
+}
+
+#description:hover,
+#amount:hover {
+  border: 2px solid lightgrey;
+  box-shadow: 0px 0px 20px -17px;
+}
+
+#description:active,
+#amount:active,
+#type {
+  transform: scale(0.95);
+}
+
+.input:focus {
+  border: 2px solid grey;
+}
+
+#amount {
+  height: 4px;
+}
+#amount:focus {
+  height: 50px;
+}
+#description {
+  height: 46px;
+}
+#description:focus {
+  height: 100px;
+}
+/* addbtn style  */
+#add-btn,
+#reset-btn {
+  margin-top: 10px;
+  padding: 0.7em 3em;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  color: #608bc1;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+#reset-btn {
+  color: #871713;
+}
+#add-btn:hover {
+  background-color: #133e87;
+  box-shadow: 0px 15px 20px rgba(46, 95, 229, 0.4);
+  color: #fff;
+  transform: scale(0.95);
+}
+#reset-btn:hover {
+  background-color: #871713;
+  box-shadow: 0px 15px 20px rgba(46, 95, 229, 0.4);
+  color: #fff;
+  transform: scale(0.95);
+}
+
+#add-btn:active {
+  transform: scale(0.7);
+}
+
+.maincontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background: radial-gradient(black 3px, transparent 4px),
+    radial-gradient(black 3px, transparent 4px),
+    linear-gradient(#fff 4px, transparent 0),
+    linear-gradient(
+      45deg,
+      transparent 74px,
+      transparent 75px,
+      #a4a4a4 75px,
+      #a4a4a4 76px,
+      transparent 77px,
+      transparent 109px
+    ),
+    linear-gradient(
+      -45deg,
+      transparent 75px,
+      transparent 76px,
+      #a4a4a4 76px,
+      #a4a4a4 77px,
+      transparent 78px,
+      transparent 109px
+    ),
+    #fff;
+  background-size: 109px 109px, 109px 109px, 100% 6px, 109px 109px, 109px 109px;
+  background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+}
+.container {
+  background-color: #fff;
+  padding: 20px;
+  height: fit-content;
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
+    rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+#wrapper-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+.input-container {
+  display: grid;
+  gap: 2px;
+  max-height: fit-content;
+}
+
+#transactions {
+  height: 30vh;
+  overflow-y: scroll;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+}
+
+#totalcontainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  user-select: none;
+}
+
+#financialcalculator {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 10px;
+}
+#netbalance {
+  width: 100%;
+  height: 50%;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 20px;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  background-image: url(./assets/abstract-2d-colorful-wallpaper-with-grainy-gradients.jpg);
+  background-size: cover;
+  user-select: none;
+}
+#netbalance div {
+  display: flex;
+  flex-direction: column;
+}
+#totalcontainer {
+  display: flex;
+  gap: 20px;
+}
+.downarrow {
+  color: red;
+}
+.uparrow {
+  color: greenyellow;
+}
+#totalcontainer div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  padding: 20px;
+  border-radius: 10px;
+  height: 100px;
+  color: #fff;
+  background-image: url(./assets/dark-dramatic-gradient-colors-background_811396-162857.jpg);
+  background-size: cover;
+}
+
+table {
+  width: 100%;
+  text-wrap: wrap;
+}
+
+tr {
+  border: 1px solid black;
+}
+#transactions thead tr {
+  font-size: 1.4rem;
+  font-weight: bolder;
+}
+#transaction-table {
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+}
+.transaction-item {
+  justify-content: space-around;
+  font-size: 1.3em;
+}
+td {
+  width: 20%;
+  text-align: center;
+  overflow: break-word;
+}
+/* 2E073F */
+td button {
+  all: unset;
+}
+th {
+  border-bottom: 3px solid black;
+  padding: 10px 20px;
+}
+td {
+  border-bottom: 1px solid black;
+  border-collapse: collapse;
+}
+td:last-child {
+  padding: 3px;
+}
+td:last-child button {
+  padding: 5px;
+}
+
+.delete-btn,
+.edit-btn {
+  background-color: #2e073f;
+  padding: 5px 10px;
+  color: #fff;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.delete-btn:hover,
+.edit-btn:hover {
+  background-color: #fff;
+  color: #2e073f;
+}
+thead {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(10px);
+}
+/* filter styling */
+.tabs {
+  display: flex;
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 0 1px 0 rgba(24, 94, 224, 0.15),
+    0 6px 12px 0 rgba(24, 94, 224, 0.15);
+  padding: 0.75rem;
+  border-radius: 99px;
+}
+
+.tabs * {
+  z-index: 2;
+}
+
+.filtercontainer input[type="radio"] {
+  display: none;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 80px;
+  font-size: 0.8rem;
+  color: black;
+  font-weight: 500;
+  border-radius: 99px;
+  cursor: pointer;
+  transition: color 0.15s ease-in;
+  user-select: none;
+}
+
+.filtercontainer input[type="radio"]:checked + label {
+  color: #185ee0;
+}
+
+.filtercontainer input[type="radio"]:checked + label > .notification {
+  background-color: #185ee0;
+  color: #fff;
+  margin: 0px;
+}
+
+.filtercontainer input[id="radio-1"]:checked ~ .glider {
+  transform: translateX(80%);
+}
+
+.filtercontainer input[id="radio-2"]:checked ~ .glider {
+  transform: translateX(195%);
+}
+
+.filtercontainer input[id="radio-3"]:checked ~ .glider {
+  transform: translateX(310%);
+}
+
+.glider {
+  position: absolute;
+  display: flex;
+  height: 30px;
+  width: 70px;
+  background-color: #e6eef9;
+  z-index: 1;
+  border-radius: 99px;
+  transition: 0.25s ease-out;
+}
+
+#filter {
+  padding-top: 2px;
+  margin-right: 10px;
+}
+#addcircle {
+  display: none;
+}
+#close {
+  display: none;
+}
+/* mobile resposive  */
+
+@media (max-width: 600px) {
+  #wrapper-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+  }
+  #financialcalculator {
+    order: 1;
+  }
+  #financialstatus {
+    order: 2;
+  }
+  th {
+    padding: 1px 2px;
+  }
+  #transactions thead tr {
+    font-size: 0.6rem;
+    font-weight: bolder;
+  }
+  .transaction-item {
+    justify-content: space-around;
+    font-size: 0.7em;
+  }
+  .delete-btn,
+  .edit-btn {
+    background-color: #2e073f;
+    padding: 0;
+    color: #fff;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  td:last-child {
+    padding: 0;
+  }
+  td:last-child button {
+    padding: 1px;
+  }
+  .maincontainer {
+    position: relative;
+  }
+  #addcircle {
+    display: block;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 80px;
+    color: #005bea;
+    backdrop-filter: blur(10px);
+    border-radius: 100%;
+  }
+  #close {
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 300px;
+    font-size: 60px;
+    z-index: 40;
+  }
+  #close:active {
+    color: red;
+  }
+  #financialstatus {
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    height: 150%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 30;
+  }
+  h1{
+    font-size:1.6rem;
+  }
+}

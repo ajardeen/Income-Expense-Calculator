@@ -163,6 +163,7 @@ option {
   overflow-y: scroll;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
 }
 
 #totalcontainer {

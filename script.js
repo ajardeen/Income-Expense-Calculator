@@ -21,7 +21,7 @@ let addTransaction = () => {
     alert("Please fill all the fields");
     return;
   }
-  console.log(transactionData);
+  
   transactionData.push({
     description: descriptionValue,
     amount: amountValue,
@@ -32,7 +32,6 @@ let addTransaction = () => {
   description.value = "";
   amount.value = "";
   type.value = "expense";
-  console.log(transactionData);
   transactionListUpdate("all");
   updateAllValues();
 };
@@ -89,6 +88,7 @@ let transactionListUpdate = (filterName) => {
 
   transactionData.filter((transaction, index) => {
     if (transaction.type === filterName) {
+      
       ListCreatingCode(transaction,index);
     } else if (filterName === "all") {
       ListCreatingCode(transaction,index);
@@ -98,22 +98,21 @@ let transactionListUpdate = (filterName) => {
 transactionListUpdate("all");
 
 let deleteItem = (index) => {
-  console.log(index);
   transactionData.splice(index, 1);
   localStorage.setItem("transactionData", JSON.stringify(transactionData));
   transactionListUpdate("all");
   updateAllValues();
 };
-
+let absoluteIndex ;
 let updateItem = (index) => {
+  
   if (addbtn.textContent === "Update") {
-    transactionData.splice(index, 1);
-
-    transactionData.splice(index, 0, {
+    transactionData[index]={
       description: description.value,
       amount: amount.value,
       type: type.value,
-    });
+    };
+
     description.value = "";
     amount.value = "";
     type.value = "expense";
@@ -127,17 +126,18 @@ let updateItem = (index) => {
 };
 
 const editItem = (index) => {
+  absoluteIndex=index;
+  
   description.value = transactionData[index].description;
   amount.value = transactionData[index].amount;
   type.value = transactionData[index].type;
   addbtn.textContent = "Update";
   addbtn.removeEventListener("click", addTransaction);
-  addbtn.addEventListener("click", () => updateItem(index));
+  addbtn.addEventListener("click", () => updateItem(absoluteIndex));
   updateAllValues();
   // mobile responsive display purpose only
   const mobileMediaQuery = window.matchMedia("(max-width: 600px)");
   if(mobileMediaQuery.matches) {
-    console.log("mobile");
     
     financialstatus.style.display = "flex";
     addbtn.addEventListener("click", () => {
